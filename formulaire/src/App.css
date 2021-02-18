@@ -1,0 +1,36 @@
+ .container{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ 
+ .formulaire{
+    display: flex;
+    justify-content: space-around;
+}
+
+.gauche{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.droite{
+    display: flex;
+    flex-direction: column;
+}
+
+.bas{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+} 
+
+.card {
+    width: 500px;
+}
+
+label{
+    margin-right: 10px;
+}

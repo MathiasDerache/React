@@ -1,0 +1,19 @@
+.log{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    background-color: #dad6d6;
+    color: #222;
+    font-size: 3em;
+    border: none;
+    transition-duration: 0.3s;
+}
+
+.log:hover{
+    background-color: #222;
+    color: #dad6d6;
+    border: 2px solid wheat;
+}

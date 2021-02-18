@@ -1,0 +1,47 @@
+.App{
+    margin-top: 200px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.recherche{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search{
+    height: 40px;
+    margin: 5px 0 0 5px;
+    font-size: 2em;
+}
+
+.label{
+    font-size: 2em;
+}
+
+.check{
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    border: grey 2px solid;
+}
+
+.contenu{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.detail{
+    font-size: 2em;
+}
+
+.red{
+    color: red;
+}
+
+.category{
+    font-size: 2em;
+    font-weight: bold;
+}
