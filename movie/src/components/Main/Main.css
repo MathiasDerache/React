@@ -1,0 +1,88 @@
+/* ******************************** Component Liste **************************** */
+
+.films{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 100px 100px;
+}
+
+    /* ******************************** Component Film **************************** */
+.film{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+    font-size: 2em;
+    transition: 0.3s;
+}
+
+.film:hover{
+    transform: scale(1.15);
+}
+
+
+.filmImage{
+    cursor: pointer;
+}
+
+
+.filmTitle{
+    cursor: pointer;
+    font-size: 0.5em!important;
+    width: 200px;
+    text-align: center;
+}
+
+img{
+    width: 10em;
+}
+
+#description{
+    position: absolute;
+    background-color: rgba(32, 32, 32, 0.75);
+    width: 320px;
+    height: 480px;
+    font-size: 0.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fav{
+    position: relative;
+    top: 445px;
+    float: right;
+    margin-right: 10px;
+    background-color: transparent;
+    color: red;
+    border: none;
+    border-radius:50%;
+    text-decoration : none;
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+.fav:hover{
+    transform: scale(1.5);
+}
+
+.fav:active{
+    transform: scale(1);
+}
+/* ******************************** Component Recherche **************************** */
+
+.input-group{
+    margin: 75px 0px;
+}
+
+.btn{
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+}
+
+.btn:hover{
+    background-color: #27914D;
+    color: white;
+}
