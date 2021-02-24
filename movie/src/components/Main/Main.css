@@ -48,10 +48,22 @@ img{
     cursor: pointer;
 }
 
+.toDetail{
+    position: absolute;
+    top: 0px;
+    background-color: transparent;
+    width: 320px;
+    height: 450px;
+    font-size: 0.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
 .fav{
-    position: relative;
-    top: 445px;
-    float: right;
+    position: absolute;
+    top: 450px;
+    left: 280px;
     margin-right: 10px;
     background-color: transparent;
     color: red;
@@ -69,6 +81,16 @@ img{
 
 .fav:active{
     transform: scale(1);
+}
+
+a{
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+}
+
+a:hover{
+    color: white;
 }
 /* ******************************** Component Recherche **************************** */
 

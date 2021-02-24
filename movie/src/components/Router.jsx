@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import { Main } from './Main/Main';
 import { Favoris } from './Favoris/Favoris';
 import { Perdu } from './Perdu';
+import { Detail } from './Detail/Detail';
 
 export class Router extends Component {
     render() {
@@ -13,6 +14,7 @@ export class Router extends Component {
                     <Switch>
                         <Route  exact path='/' component={Main}/>
                         <Route  path='/favoris' component={Favoris}/>
+                        <Route  path='/detail' component={Detail}/>
                         <Route component={Perdu} />
                     </Switch>
                 </BrowserRouter>

@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export class Film extends Component {
 
 
     state = {
         show : false,
+        movie : this.props.movie,
+        fav : true
     }
 
-    addFav = () => {
-     localStorage.setItem('fav', JSON.stringify(this.props.value))
-    }
+    
 
     montrerDescription = () => {
         this.setState({
@@ -26,21 +27,30 @@ export class Film extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="film" onMouseEnter={this.montrerDescription} onMouseLeave={this.cacherDescription}>
-                    {this.state.show ? (
-                        <div id='description'>
-                        <button className="fav" onClick={this.addFav}><i className="fas fa-heart"></i></button>
-                            {this.props.description}
-                        </div>
-                    ) : null }
+                    <div className="film" onMouseEnter={this.montrerDescription} onMouseLeave={this.cacherDescription}>
+                        {this.state.show ? (
+                            <div id='description'>
+                                <Link to={{pathname: '/detail'}} >
 
-                    <div className="filmImage">
-                        <img src={this.props.image} alt=""  />
+                                {this.props.description}
+                                <div className="toDetail"></div>
+                                </Link>
+                                {this.props.favoris ||this.props.infav(this.state.movie.id) ? (
+                                    <button className="fav" onClick={() => {this.props.remove(this.state.movie.id)}}><i className="fas fa-times"></i></button>  
+                                ) : (
+                                    <button className="fav" onClick={() => {this.props.add(this.state.movie)}}><i className="fas fa-heart"></i></button>
+                                )}
+                            </div>
+                            
+                        ) : null }
+
+                        <div className="filmImage">
+                            <img src={this.props.image} alt=""  />
+                        </div>
+                        <div className="filmTitle">
+                        {this.props.title}
+                        </div>
                     </div>
-                    <div className="filmTitle">
-                    {this.props.title}
-                    </div>
-                </div>
             </React.Fragment>
         )
     }

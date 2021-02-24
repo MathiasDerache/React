@@ -7,11 +7,11 @@ export class Navbar extends Component {
             <div>
                         <ul className="nav">
                             <li className="items">
-                                <NavLink exact to ="/" className="nav-link" activeClassName="text-muted">Accueil</NavLink>
+                                <NavLink exact to ="/" className="nav-link" activeClassName="text-muted">Home</NavLink>
                             </li>
 
                             <li className="items">
-                            <NavLink exact to ="/favoris" className="nav-link" activeClassName="text-muted">Favoris</NavLink>
+                            <NavLink exact to ="/favoris" className="nav-link" activeClassName="text-muted">Favorites</NavLink>
                             </li>
                         </ul>
             </div>

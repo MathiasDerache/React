@@ -21,6 +21,35 @@ export class Liste extends Component {
              .catch(error => console.log(error))
     }
 
+    addFav = (movie) => {
+        let movies = localStorage.getItem('movies');
+        movies = JSON.parse(movies);
+        const indice = movies.findIndex(m => m.id === movie.id)
+        if(indice === -1){
+            movies.push(movie)
+            localStorage.setItem('movies', JSON.stringify(movies))
+        }
+    }
+
+    removeFromFav = (id) =>{
+        let movies = localStorage.getItem('movies');
+        movies = JSON.parse(movies);
+        const newMovies = movies.filter(m => m.id !== id)
+        localStorage.setItem('movies', JSON.stringify(newMovies))
+    }
+
+    inFavoris = (id) => {
+        let movies = localStorage.getItem('movies');
+        movies = JSON.parse(movies);
+        const indice = movies.findIndex(m => m.id === id)
+        if(indice === -1){
+            return false
+        }else {
+            return true
+        }
+
+    }
+
     render() {
         if(!this.state.isLoaded) return <h1>Please Wait...</h1>
         return (
@@ -32,7 +61,10 @@ export class Liste extends Component {
                     image={"https://image.tmdb.org/t/p/w500" + value.poster_path}
                     description={value.overview}
                     id={value.id}
-                    value={value}
+                    movie={value}
+                    add ={this.addFav}
+                    infav = {this.inFavoris}
+                    remove = {this.removeFromFav}
                     />
                 )}
             </div>

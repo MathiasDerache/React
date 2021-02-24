@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Film from '../Main/Film';
 import '../Main/Main.css'
 
 export class Favoris extends Component {
@@ -6,11 +7,7 @@ export class Favoris extends Component {
 
     state = {
         show : false,
-    }
-
-
-    addFav = () => {
-        localStorage.setItem('fav', JSON.stringify(this.props.value))
+        movies : JSON.parse(localStorage.getItem('movies'))
     }
 
     montrerDescription = () => {
@@ -25,32 +22,34 @@ export class Favoris extends Component {
         })
     }
 
+    removeFromFav = (id) =>{
+        let movies = localStorage.getItem('movies');
+        movies = JSON.parse(movies);
+        const newMovies = movies.filter(m => m.id !== id)
+        localStorage.setItem('movies', JSON.stringify(newMovies))
+        this.setState({
+            movies : JSON.parse(localStorage.getItem('movies'))
+        })
+    }
+
     render() {
-
-        let fav = localStorage.getItem('fav');
-        fav = JSON.parse(fav);
-        console.log(fav.title);
-
-        const image = 'https://image.tmdb.org/t/p/w500' + fav.poster_path
 
         return (
             <React.Fragment>
-                <div className="films">
-                    <div className="film" onMouseEnter={this.montrerDescription} onMouseLeave={this.cacherDescription}>
-                    {this.state.show ? (
-                            <div id='description'>
-                            <button className="fav"><i className="fas fa-times"></i></button>
-                                {fav.overview}
-                            </div>
-                        ) : null }
-                        <div className="filmImage">
-                            <img src={image} alt=""  />
-                        </div>
-                        <div className="filmTitle">
-                        {fav.title}
-                        </div>
-                    </div>
-                </div>
+            <div className="films">
+                {this.state.movies.map((movie) => 
+                    <Film
+                    key={movie.id}
+                    title={movie.title}
+                    image={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                    description={movie.overview}
+                    id={movie.id}
+                    movie={movie}
+                    remove = {this.removeFromFav}
+                    favoris
+                    />
+                )}
+            </div>
             </React.Fragment>
         )
     }

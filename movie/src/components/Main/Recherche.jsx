@@ -5,9 +5,9 @@ export class Recherche extends Component {
         return (
                 <React.Fragment>
                     <div className="input-group">
-                        <input type="search" className="form-control rounded search" placeholder="Recherche ..." aria-label="Search"
+                        <input type="search" className="form-control rounded search" placeholder="Search a movie ..." aria-label="Search"
                             aria-describedby="search-addon" />
-                              <button type="button" className="btn btn-outline">Recherche</button>
+                              <button type="button" className="btn btn-outline">Search</button>
                     </div>
                 </React.Fragment>
         )

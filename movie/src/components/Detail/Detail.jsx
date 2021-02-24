@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
 export class Detail extends Component {
+
+
     render() {
         return (
-            <div>
-                
-            </div>
+            <React.Fragment>
+                <h1>Detail</h1>
+            </React.Fragment>
         )
     }
 }
