@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
 import Liste from './Liste'
-import Recherche from './Recherche'
 import './Main.css'
 
 
 export class Main extends Component {
+
     render() {
+
         return (
             <>
-                <div>
-                    <div className="container search">
-                        <Recherche/>
-                    </div>
-
+            <div>
                 <Liste/>
-                </div>
+            </div>
             </>
         )
     }

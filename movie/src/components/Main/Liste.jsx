@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 import Film from './Film'
 import { apiMovie } from './../../api/apiMovie';
+import Recherche from './Recherche';
 
 export class Liste extends Component {
     
+    constructor(props){
+        super(props)
+        this.state = {
+            array : [],
+            boolean : true
+        }
+    }
+
     state = {
         isLoaded : false,
     }
@@ -48,12 +57,22 @@ export class Liste extends Component {
         }
 
     }
+
+    rechercheFilm = (arraySearch) => {
+        this.setState({
+            values : arraySearch,
+            boolean : false
+        })
+    }
     
 
     render() {
         if(!this.state.isLoaded) return <div className="loader"></div>
         return (
             <React.Fragment>
+                <div className="container search">
+                    <Recherche rechercheFilm={this.rechercheFilm}/>
+                </div>
                 <div className="films">
                     {this.state.values.map((value) => 
                         <Film

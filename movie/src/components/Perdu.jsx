@@ -12,7 +12,7 @@ export class Perdu extends Component {
                     <img src={logo} alt="robot" />
                 </div>
                 <div>
-                    <h1>Oups ! that page doesn't exist ...</h1>
+                    <h1>Oops ! that page doesn't exist ...</h1>
                 </div>
             </div>
         )
