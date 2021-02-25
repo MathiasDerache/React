@@ -116,13 +116,13 @@ a:hover{
     margin: 75px 0px;
 }
 
-.btn{
+.searchBtn{
     background-color: transparent;
     color: white;
     font-size: 2em;
 }
 
-.btn:hover{
+.searchBtn:hover{
     background-color: #27914D;
     color: white;
 }
@@ -178,4 +178,20 @@ hr {
     align-self: center;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.back{
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    border: none;
+    color: #27914D;
+    font-size: 5em;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+}
+
+.back:hover{
+    color: #27914D;
 }

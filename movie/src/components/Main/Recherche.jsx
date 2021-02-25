@@ -29,7 +29,7 @@ export class Recherche extends Component {
                             <div className="input-group">
                                 <Field type="search" className="form-control rounded search" placeholder="Search a movie ..." aria-label="Search"
                                     aria-describedby="search-addon"  name="query" />
-                                    <button type="submit" className="btn btn-outline">Search</button>
+                                    <button type="submit" className="btn btn-outline searchBtn">Search</button>
                             </div>
                         </Form>
                     </Formik>

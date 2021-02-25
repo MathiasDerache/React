@@ -36,6 +36,7 @@ export class Favoris extends Component {
 
         return (
             <React.Fragment>
+                <button type='button' className="btn back" onClick={() => this.props.history.goBack()}><i className="fas fa-arrow-left"></i></button>
                 <h1 className='text-center mt-5'>My Favourites</h1>
                 <div className="hr">
                     <hr/>
