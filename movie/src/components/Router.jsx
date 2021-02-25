@@ -6,6 +6,7 @@ import { Favoris } from './Favoris/Favoris';
 import { Perdu } from './Perdu';
 import { Detail } from './Detail/Detail';
 
+
 export class Router extends Component {
     render() {
         return (

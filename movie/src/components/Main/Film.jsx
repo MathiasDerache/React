@@ -24,16 +24,20 @@ export class Film extends Component {
         })
     }
 
+    detail = (movie) => {
+        localStorage.setItem('film', JSON.stringify(movie))
+    }
+
     render() {
         return (
             <React.Fragment>
                     <div className="film" onMouseEnter={this.montrerDescription} onMouseLeave={this.cacherDescription}>
                         {this.state.show ? (
                             <div id='description'>
-                                <Link to={{pathname: '/detail'}} >
-
-                                {this.props.description}
-                                <div className="toDetail"></div>
+                                <Link to={{pathname: '/detail',
+                                        }}>
+                                    {this.props.description}
+                                    <div className="toDetail" onClick={() => {this.detail(this.props.movie)}}></div>
                                 </Link>
                                 {this.props.favoris ||this.props.infav(this.state.movie.id) ? (
                                     <button className="fav" onClick={() => {this.props.remove(this.state.movie.id)}}><i className="fas fa-times"></i></button>  

@@ -36,6 +36,10 @@ export class Favoris extends Component {
 
         return (
             <React.Fragment>
+                <h1 className='text-center mt-5'>My Favourites</h1>
+                <div className="hr">
+                    <hr/>
+                </div>
             <div className="films">
                 {this.state.movies.map((movie) => 
                     <Film
